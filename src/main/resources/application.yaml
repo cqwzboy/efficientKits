@@ -1,0 +1,26 @@
+#spring:
+#  mail:
+#    host: smtp.126.com
+#    username: fqq904571943@126.com
+#    password: 1qaz2wsxxsw2zaq1
+#    host: smtp.qq.com
+#    username: 904571943@qq.com
+#    password: ttuelhredzvnbfdg
+#    default-encoding: UTF-8
+
+#server:
+#  ssl:
+#    key-store: efficient_mail.keystore
+#    key-store-password: 31415927
+#    key-store-type: JKS
+#    key-alias: efficient_mail
+
+
+server:
+  port: 9090
+
+spring:
+  http:
+    multipart:
+      max-file-size: 10Mb
+      max-request-size: 100Mb
