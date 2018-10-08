@@ -1,6 +1,8 @@
 package com.fuqinqin.efficientKits.entity.mail;
 
 import com.fuqinqin.efficientKits.entity.common.BaseRequest;
+import com.fuqinqin.efficientKits.enums.ResultCode;
+import com.fuqinqin.efficientKits.exception.EfficientMailException;
 import lombok.Data;
 import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
@@ -22,19 +24,19 @@ public class MailRequest implements BaseRequest {
     @Override
     public void check() {
         if(StringUtils.isBlank(username)){
-            throw new IllegalArgumentException("username must not be empty");
+            throw new EfficientMailException(ResultCode.ILLEGAL_ARGUMENT, "username must not be empty");
         }
         if(StringUtils.isBlank(password)){
-            throw new IllegalArgumentException("password must not be empty");
+            throw new EfficientMailException(ResultCode.ILLEGAL_ARGUMENT, "password must not be empty");
         }
         if(StringUtils.isBlank(to)){
-            throw new IllegalArgumentException("to must not be empty");
+            throw new EfficientMailException(ResultCode.ILLEGAL_ARGUMENT, "to must not be empty");
         }
         if(StringUtils.isBlank(subject)){
-            throw new IllegalArgumentException("subject subject not be empty");
+            throw new EfficientMailException(ResultCode.ILLEGAL_ARGUMENT, "subject subject not be empty");
         }
         if(StringUtils.isBlank(text)){
-            throw new IllegalArgumentException("text subject not be empty");
+            throw new EfficientMailException(ResultCode.ILLEGAL_ARGUMENT, "text subject not be empty");
         }
     }
 }

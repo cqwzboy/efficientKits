@@ -8,6 +8,8 @@ package com.fuqinqin.efficientKits.enums;
 public enum  ResultCode {
     OK(200, "success"),
 
+    ILLEGAL_ARGUMENT(999, "非法参数"),
+
     /******************* Mail *****************/
     MAIL_FAILED(1001, "邮件发送失败"),
     MAIL_MAX_FILE_SIZE(1002, "单个附件超过10Mb"),

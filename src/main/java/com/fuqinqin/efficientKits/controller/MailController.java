@@ -1,5 +1,6 @@
 package com.fuqinqin.efficientKits.controller;
 
+import com.fuqinqin.efficientKits.common.Constants;
 import com.fuqinqin.efficientKits.entity.common.Result;
 import com.fuqinqin.efficientKits.entity.mail.Mail;
 import com.fuqinqin.efficientKits.entity.mail.MailRequest;
@@ -54,7 +55,7 @@ public class MailController {
 
         Mail mail = new Mail();
         BeanUtils.copyProperties(mailRequest, mail);
-        mail.decoder("UTF-8");
+        mail.decoder(Constants.ENCODE_UTF8);
 
         MailServiceSenderType serviceSenderType = MailServiceSenderType.parseUsername(mailRequest.getUsername());
         if(serviceSenderType == null){
@@ -74,7 +75,7 @@ public class MailController {
                 }
 
                 // 文件名
-                String fileName = URLDecoder.decode(file.getOriginalFilename(), "UTF-8");
+                String fileName = URLDecoder.decode(file.getOriginalFilename(), Constants.ENCODE_UTF8);
                 if(containSpecialCharacters(fileName)){
                     log.info("file={}, 包含特殊字符", fileName);
                     return new Result(ResultCode.SPECIAL_CHARACTERS);

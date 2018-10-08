@@ -9,7 +9,7 @@ import lombok.Data;
  * @date 2018-09-28
  */
 @Data
-public class EfficientMailException extends Exception {
+public class EfficientMailException extends RuntimeException {
     private ResultCode resultCode;
 
     public EfficientMailException(ResultCode resultCode) {
