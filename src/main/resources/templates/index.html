@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>thymeleaf test</title>
+    <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h2 th:utext="${content}"></h2>
+    <table class="table" align="center">
+        <tr th:each="p : ${persons}">
+            <td th:if="${p.id} % 2 == 0" th:text="${p.id}"></td>
+            <td th:text="${p.name}" th:colspan="${p.id} % 2 == 1 ? 2 : 1"></td>
+        </tr>
+    </table>
+    <div>
+        <div th:text="${'日期为：' + #dates.format(date, 'yyyy/MM/dd HH:mm:ss')}"></div>
+        <!--星号表达式-->
+        <div th:object="${session.user}">
+            <div th:text="*{id}"></div>
+            <div th:text="*{'* ' + name}"></div>
+            <div th:text="${'$ ' + session.user.name}"></div>
+            <div th:text="${'#object ' + #object.name}" />
+        </div>
+        <div style="border: 1px;">
+            <div th:text="${flag} == '0'"></div>
+            <div th:text="${flag == '0'}"></div>
+        </div>
+        <div th:text="|welcome to my home, ${session.user.name} !|"></div>
+        <div th:text="${none} ?: 'none'" />
+        <div th:text="${none} ?: _" >there is none</div>
+    </div>
+
+    <hr/>
+
+    <div th:text="#{index.welcome.fr}">这是默认的中文欢迎页面</div>
+
+    <div th:replace="footer :: copy" />
+</body>
+</html>

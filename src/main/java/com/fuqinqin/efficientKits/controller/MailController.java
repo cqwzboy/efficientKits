@@ -58,7 +58,7 @@ public class MailController {
 
         MailServiceSenderType serviceSenderType = MailServiceSenderType.parseUsername(mailRequest.getUsername());
         if(serviceSenderType == null){
-            throw  new IllegalArgumentException("illegal username");
+            return new Result(ResultCode.ILLEGAL_MAIL, ResultCode.ILLEGAL_MAIL.msg()+"[illegal username]");
         }
         mail.setSenderType(serviceSenderType);
 

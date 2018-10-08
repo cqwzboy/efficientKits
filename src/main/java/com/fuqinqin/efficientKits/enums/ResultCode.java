@@ -13,6 +13,7 @@ public enum  ResultCode {
     MAIL_MAX_FILE_SIZE(1002, "单个附件超过10Mb"),
     SPECIAL_CHARACTERS(1003, "附件名称包含特殊字符"),
     MAIL_AUTH(1004, "授权失败，密码非登录免密，而是授权码，请仔细检查"),
+    ILLEGAL_MAIL(1005, "非法的邮箱"),
     ;
 
     private Integer code;
