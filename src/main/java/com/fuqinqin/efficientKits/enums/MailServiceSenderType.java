@@ -60,7 +60,7 @@ public enum MailServiceSenderType {
             return NTES_163;
         }else if(username.endsWith("126.com")){
             return NTES_126;
-        }else if(username.endsWith("sina.com.cn") || username.endsWith("sina.cn") || username.endsWith("sina.com")){
+        }else if(username.endsWith("sina.cn") || username.endsWith("sina.com")){
             return SINA;
         }else if(username.endsWith("sohu.com")){
             return SOHU;
