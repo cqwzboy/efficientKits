@@ -1,0 +1,72 @@
+.mod-pagination {
+	margin: 20px 0;
+}
+
+.mod-pagination span {
+	display: inline-block;	
+}
+
+.mod-pagination .btn-first,
+.mod-pagination .btn-prev,
+.mod-pagination .btn-next,
+.mod-pagination .btn-last,
+.mod-pagination .btn-jump {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: solid thin #ddd;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 2px;	
+}
+
+.mod-pagination button.disabled {
+	background-color: #ddd;
+    cursor: not-allowed;	
+}
+
+.mod-pagination .pagination-editor {
+	width: 40px;
+    padding: 5px 2px;
+    margin: 0 5px;
+    border: solid 1px #ddd;
+    background: #fff;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 2px;		
+}
+
+.mod-pagination .pagination-editor::-webkit-inner-spin-button, 
+.mod-pagination .pagination-editor::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.mod-pagination .btn-jump {
+	width: 60px ;	
+}
+
+.pager {
+	display: inline-block;
+	margin: 0;
+	vertical-align: top;
+}
+
+.pager .number {
+    float: left;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: solid thin #ddd;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.pager .number.active {
+    border: solid 1px #c2343a;
+    background-color: rgba(194, 52, 58, .1);
+    color: #c2343a;
+}
+
+.li_style {
+	list-style-type:none;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>thymeleaf test</title>
     <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/pager.css}"/>
 </head>
 <body>
     <h2 th:utext="${content}"></h2>
@@ -36,5 +37,9 @@
     <div th:text="#{index.welcome.fr}">这是默认的中文欢迎页面</div>
 
     <div th:replace="footer :: copy" />
+
+    <div class="_pager_"></div>
+    <script th:src="@{/js/jquery-1.9.1.js}"></script>
+    <script th:src="@{/js/pager.js}"></script>
 </body>
 </html>
